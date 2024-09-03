@@ -1,0 +1,1 @@
+cout << fixed << setprecision(6); // Format output dengan 6 desimal
