@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir Pop Mart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kasir Pop Mart</h1>
+
+        <form id="formKasir">
+            <table class="form-table">
+                <tr>
+                    <td style="text-align: left;">
+                        <label for="barang">Pilih Mainan</label>
+                    </td>
+                    <td>
+                        <select id="barang" required>
+                            <option value="molly" data-harga="150000">Molly - Rp 150.000</option>
+                            <option value="pino" data-harga="200000">Pino Jelly - Rp 200.000</option>
+                            <option value="dimoo" data-harga="175000">Dimoo - Rp 175.000</option>
+                            <option value="pucky" data-harga="220000">Pucky - Rp 220.000</option>
+                            <option value="skullpanda" data-harga="180000">Skullpanda - Rp 180.000</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <label for="jumlah">Jumlah</label>
+                    </td>
+                    <td>
+                        <input type="number" id="jumlah" min="1" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="button" onclick="hitungTotal()">Hitung</button><br><br>
+                    </td>
+                    
+                </tr>
+            </table>
+        </form>        
+
+        <h2>Daftar Pembelian</h2>
+        <table id="tabelKasir">
+            <thead>
+                <tr>
+                    <th>Mainan</th>
+                    <th>Harga Satuan</th>
+                    <th>Jumlah</th>
+                    <th>Total Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h3 id="totalKeseluruhan">Total Keseluruhan: Rp 0</h3>
+        <button id="selesaikanPembelian" onclick="selesaikanPembelian()">Selesaikan Pembelian</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

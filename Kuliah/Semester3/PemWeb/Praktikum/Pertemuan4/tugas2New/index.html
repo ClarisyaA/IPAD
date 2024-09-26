@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Toko Pop Mart</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Pembelian Mainan Pop Mart</h1>
+        <form id="formKasir">
+            <table class="form-table">
+                <tr>
+                    <td>
+                        <label for="barang">Pilih Mainan:</label>
+                    </td>
+                    <td>
+                        <select id="barang" required>
+                            <option value="molly" data-harga="150000">Molly - Rp 150.000</option>
+                            <option value="pino" data-harga="200000">Pino Jelly - Rp 200.000</option>
+                            <option value="dimoo" data-harga="175000">Dimoo - Rp 175.000</option>
+                            <option value="pucky" data-harga="220000">Pucky - Rp 220.000</option>
+                            <option value="skullpanda" data-harga="180000">Skullpanda - Rp 180.000</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="jumlah">Jumlah:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="jumlah" min="1" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="button" class="btn" onclick="hitungTotal()">Hitung</button>
+                        <button type="button" class="btn" onclick="selesaiBelanja()">Selesai Belanja</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        <table id="hasilTabel">
+            <thead>
+                <tr>
+                    <th>Barang</th>
+                    <th>Jumlah</th>
+                    <th>Total Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Hasil pembelian akan ditambahkan di sini -->
+            </tbody>
+        </table>
+    </div>
+    <script src="kasir.js"></script>
+</body>
+</html>

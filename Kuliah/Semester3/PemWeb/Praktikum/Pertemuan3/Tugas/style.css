@@ -1,0 +1,9 @@
+/* External CSS */
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+p {
+    color: #555;
+    line-height: 1.6;
+}

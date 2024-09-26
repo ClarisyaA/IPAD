@@ -28,9 +28,13 @@ body {
 h1 {
     color: #002584;;
     font-size: 28px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     letter-spacing: px;
     text-align:center;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-right: 30px;
 }
 
 p {
@@ -70,4 +74,26 @@ a:hover {
 
 form{
     line-height: 1.6;
+}
+
+.button{
+    border-radius: 20px;
+}
+
+/* Mengurangi spasi antara label dan input pada bagian Kelas dan Hobi */
+td {
+    padding: 5px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+td input[type="radio"], td input[type="checkbox"] {
+    margin-top: -10px;
+}
+
+form table td {
+    vertical-align: top;
 }

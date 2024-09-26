@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Kereta Api</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Booking Tiket Kereta Jakarta - Bandung</h1>
+    </header>
+    <main>
+    <div>
+        <table>
+            <tr>
+                <th>Train Name</th>
+                <th>Class</th>
+                <th>Depart</th>
+                <th>Arrive</th>
+                <th>Duration</th>
+                <th>Price per Person</th>
+            </tr>
+            <tr>
+                <td>Argo Parahyangan Premium</td>
+                <td>Ekonomi (C)</td>
+                <td>04.15</td>
+                <td>07.25</td>
+                <td>3h 10m</td>
+                <td>Rp. 100.000</td>
+            </tr>
+            <tr>
+                <td>Argo Parahyangan</td>
+                <td>Ekonomi (C)</td>
+                <td>05.00</td>
+                <td>08.15</td>
+                <td>3h 15m</td>
+                <td>Rp. 100.000</td>
+            </tr>
+            <tr>
+                <td>Argo Parahyangan</td>
+                <td>Executive (A)</td>
+                <td>05.00</td>
+                <td>08.15</td>
+                <td>3h 15m</td>
+                <td>Rp. 140.000</td>
+            </tr>
+            <tr>
+                <td>Argo Parahyangan</td>
+                <td>Ekonomi (C)</td>
+                <td>06.30</td>
+                <td>09.45</td>
+                <td>3h 15m</td>
+                <td>Rp. 100.000</td>
+            </tr>
+            <tr>
+                <td>Argo Parahyangan</td>
+                <td>Executive (A)</td>
+                <td>06.30</td>
+                <td>09.45</td>
+                <td>3h 15m</td>
+                <td>Rp. 140.000</td>
+            </tr>
+            <tr>
+                <td>Argo Parahyangan</td>
+                <td>Ekonomi (C)</td>
+                <td>07.35</td>
+                <td>10.50</td>
+                <td>3h 15m</td>
+                <td>Rp. 100.000</td>
+            </tr>
+        </table>
+        <br>
+            <form id="reservasi">
+                <label for="tanggal">Tanggal Keberangkatan : </label>
+                <input type="date" id="tanggal" required><br><br>
+    
+                <label for="jadwal">Jadwal Keberangkatan : </label>
+                <select name="jadwal" id="jadwal" required>
+                    <option value="100000"> Argo Parahyangan Premium Ekonomi (C) 04.15 - 07.25 </option>
+                    <option value="100000"> Argo Parahyangan Ekonomi (C) 05.00 - 08.15 </option>
+                    <option value="140000"> Argo Parahyangan Executive (A) 05.00 - 08.15 </option>
+                    <option value="100000"> Argo Parahyangan Ekonomi (C) 06.30 - 09.45 </option>
+                    <option value="140000"> Argo Parahyangan Executive (A) 06.30 - 09.45 </option>
+                    <option value="100000"> Argo Parahyangan Ekonomi (C) 07.35 - 10.50 </option>
+                </select><br><br>
+    
+                <label for="nama">Nama Lengkap : </label>           
+                <input type="text" name="nama" id="nama" required><br><br>
+    
+                <label for="ktp">Nomor Identitas/KTP : </label>           
+                <input type="text" name="ktp" id="ktp" required><br><br>
+    
+                <label for="dewasa">Jumlah Penumpang (Dewasa) : </label>         
+                <input type="text" name="dewasa" id="dewasa" min="1" required><br><br>
+    
+                <label for="anak">Jumlah Penumpang (Anak) : </label>        
+                <input type="text" name="anak" id="anak" min="0"><br><br>
+                
+                <button type="button" onclick="calculateTotal()">Hitung Tiket</button><br><br>
+    
+                <label for="harga">Total Harga : </label>            
+                <input type="text" name="harga" id="harga" readonly><br><br>
+    
+                <button type="button" id="button" onclick="generateSummary()">Booking Tiket</button><br><br>
+            </form> <br>
+            <div id="summary"></div>
+    </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

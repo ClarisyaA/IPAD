@@ -1,0 +1,104 @@
+<!--
+Nama Program    : Soal1
+Nama            : Clarisya Adeline
+NPM             : 140810230017
+Tanggal         : Minggu, 22 September 2024
+Deskripsi       : Kalkulator Konversi suhu
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Konversi Suhu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kalkulator Konversi Suhu</h1>
+
+        <form id="formKonversi">
+            <label for="dariSuhu">Pilih Suhu Awal:</label>
+            <select id="dariSuhu" required>
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>
+                <option value="R">Reamur</option>
+            </select>
+
+            <label for="suhuAwal">Masukkan Suhu Awal:</label>
+            <input type="number" id="suhuAwal" placeholder="Masukkan nilai suhu" step="any" required>
+
+            <label for="keSuhu">Pilih Suhu Tujuan:</label>
+            <select id="keSuhu" required>
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>
+                <option value="R">Reamur</option>
+            </select>
+
+            <button type="submit" onclick="return konversiSuhu()" >Konversi</button>
+        </form>
+
+        <div class="hasil" id="hasil"></div>
+    </div>
+
+    <script>
+        function konversiSuhu() {
+            const dariSuhu = document.getElementById('dariSuhu').value;
+            const suhuAwal = parseFloat(document.getElementById('suhuAwal').value);
+            const keSuhu = document.getElementById('keSuhu').value;
+            let hasilKonversi = '';
+
+            if (isNaN(suhuAwal)) {
+                console.log('Masukkan suhu yang valid!');  // Menampilkan pesan error di konsol
+                document.getElementById('hasil').textContent = 'Masukkan suhu yang valid!';
+                return false;
+            }
+
+            let suhuDalamCelsius;
+
+            // Konversi suhu ke Celsius terlebih dahulu
+            switch (dariSuhu) {
+                case 'C':
+                    suhuDalamCelsius = suhuAwal;
+                    break;
+                case 'F':
+                    suhuDalamCelsius = (suhuAwal - 32) * 5 / 9;
+                    break;
+                case 'K':
+                    suhuDalamCelsius = suhuAwal - 273.15;
+                    break;
+                case 'R':
+                    suhuDalamCelsius = suhuAwal * 5 / 4;
+                    break;
+            }
+
+            // Konversi dari Celsius ke suhu tujuan
+            switch (keSuhu) {
+                case 'C':
+                    hasilKonversi = `${suhuDalamCelsius.toFixed(2)} °C`;
+                    break;
+                case 'F':
+                    hasilKonversi = `${(suhuDalamCelsius * 9 / 5 + 32).toFixed(2)} °F`;
+                    break;
+                case 'K':
+                    hasilKonversi = `${(suhuDalamCelsius + 273.15).toFixed(2)} K`;
+                    break;
+                case 'R':
+                    hasilKonversi = `${(suhuDalamCelsius * 4 / 5).toFixed(2)} °R`;
+                    break;
+            }
+
+            console.log(`Hasil Konversi: ${hasilKonversi}`);
+
+            document.getElementById('hasil').textContent = `Hasil Konversi: ${hasilKonversi}`;
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
